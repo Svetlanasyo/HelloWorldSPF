@@ -42,8 +42,14 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
   protected getAmount(): string {
     let a = +this.properties.x;
     let b = +this.properties.y;
-    let sum = a+b;
-    return sum+'';
+
+   
+    if (isNaN(a+b)) {
+      return "Please enter number";
+    } else {
+    return (a+b)+"";}
+    
+
   }
 
   protected get dataVersion(): Version {
